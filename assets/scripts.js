@@ -5,6 +5,7 @@ $(function() {
     const $loading = $('.loading-app');
     const $headerContainer = $('header');
     const $mainContainer = $('main');
+    const $categories = $('ul.nav');
     const $footerContainer = $('footer');
     const $footerOverlay = $('.footer-overlay');
     const $detailsModal = $('.details-modal');
@@ -17,6 +18,13 @@ $(function() {
      */
     function formatPrice(price) {
         return 'R$ ' + price.toFixed(2).replace('.', ',');
+    }
+
+    /**
+     * Transforma uma string em slug.
+     */
+    function formatSlug(str) {
+        return str.normalize('NFKD').toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/[-\s]+/g, '-');
     }
 
     /**
@@ -46,9 +54,12 @@ $(function() {
         $headerContainer.css('background-image', `url('${settings.image}')`);
 
         const deliveryTax = settings.delivery_price === 0 ? 'Grátis' : formatPrice(settings.delivery_price);
+        const whatsappUrl = 'https://wa.me/' + settings.whatsapp.replace(/\D/g, '');
 
         $headerContainer.find('.store-delivery strong').text(deliveryTax);
-        $footerContainer.find('.cart-total .delivery strong').text(deliveryTax)
+        $headerContainer.find('.store-whatsapp').attr('href', whatsappUrl);
+        $headerContainer.find('.store-location').attr('href', settings.location);
+        $footerContainer.find('.cart-total .delivery strong').text(deliveryTax);
 
         $('title').text(settings.name + ' - Cardápio Virtual');
     }
@@ -95,7 +106,11 @@ $(function() {
         products.forEach(category => {
             if(!category.active) return;
 
+            const $categoryLink = $(`<li class="nav-item"><a href="#${formatSlug(category.category)}" class="nav-link">${category.category}</li>`);
+            $categories.append($categoryLink);
+
             const $category = $categoryBase.clone();
+            $category.attr('id', formatSlug(category.category));
             $category.find('.category-name').text(category.category);
 
             category.products.forEach(product => {
@@ -120,6 +135,10 @@ $(function() {
             $category.removeClass('category-base');
             $category.removeClass('hide');
             $mainContainer.append($category);
+        });
+
+        $('body').scrollspy({
+            target: '.categories-list'
         });
     }
 
@@ -260,7 +279,7 @@ $(function() {
      */
     function enableDragScroll() {
         if(window.matchMedia('(pointer: fine)').matches) {
-            $('.scroll-container').each(function() {
+            $('.scroll-container, .categories-list').each(function() {
                 let isDown = false;
                 let startX;
                 let scrollLeft;

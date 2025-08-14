@@ -24,14 +24,21 @@
         <header>
             <div class="container">
                 <h2 class="store-name">Nome da Loja</h2>
-                <p>Horário de funcionamento:</p>
-                <p class="store-time mb-3">Horário de funcionamento</p>
+                <p class="fw-bold">Horário de funcionamento:</p>
+                <p class="store-time">Horário de funcionamento</p>
+                <div class="store-links my-2">
+                    <a href="" class="store-whatsapp text-success" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="" class="store-location text-danger" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
                 <div class="badge text-bg-warning store-delivery">
                     <i class="fas fa-motorcycle me-1"></i>
                     Taxa de entrega: <strong>R$ 0,00</strong>
                 </div>
             </div>
         </header>
+
+        <!-- Categories list -->
+        <ul class="nav categories-list bg-dark"></ul>
 
         <!-- Products list -->
         <main>
@@ -47,10 +54,6 @@
                 <p class="item-price fw-bold">R$ 0,00</p>
             </a>
         </main>
-
-        <section class="copyright text-secondary">
-            Cardápio Virtual desenvolvido por <a href="https://gabrielsilva.dev.br" target="_blank">Gabriel Silva</a>.
-        </section>
 
         <!-- Product details modal -->
         <div class="modal details-modal fade">
@@ -87,6 +90,11 @@
                 </div>
             </div>
         </div>
+
+        <!-- Copyright -->
+        <section class="copyright text-secondary">
+            Cardápio Virtual desenvolvido por <a href="https://gabrielsilva.dev.br" target="_blank">Gabriel Silva</a>.
+        </section>
 
         <!-- Footer overlay -->
         <div class="modal-backdrop footer-overlay"></div>

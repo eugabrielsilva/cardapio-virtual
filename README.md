@@ -4,9 +4,11 @@ O **Cardápio Virtual** é uma aplicação web responsiva desenvolvida para rest
 
 O sistema permite que o cliente navegue pelas categorias e produtos, adicione itens ao carrinho e finalize o pedido diretamente pelo **WhatsApp** da loja.
 
+Pode ser usado tanto na loja física como cardápio virtual, quanto para delivery ou retirada.
+
 ## 🚀 Demonstração
 
-Você pode testar o site neste link: https://eugabrielsilva.github.io/cardapio-virtual.
+Você pode testar o sistema neste link: https://eugabrielsilva.github.io/cardapio-virtual
 
 ## 💭 Funcionalidades
 
@@ -22,10 +24,10 @@ Você pode testar o site neste link: https://eugabrielsilva.github.io/cardapio-v
 ## 🛠 Tecnologias utilizadas
 
 - **HTML5**
-- **CSS/SCSS** + [Bootstrap 5](https://getbootstrap.com/)
+- **CSS/SCSS** + [Bootstrap 5](https://getbootstrap.com)
 - **JavaScript (jQuery)**
-- [Font Awesome](https://fontawesome.com/) — ícones
-- [SweetAlert2](https://sweetalert2.github.io/) — alertas e notificações interativas
+- [Font Awesome](https://fontawesome.com) — ícones
+- [SweetAlert2](https://sweetalert2.github.io) — alertas e notificações interativas
 
 ## 📦 Instalação e uso
 
