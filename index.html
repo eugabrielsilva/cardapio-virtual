@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, maximum-scale=1.0, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Cardápio Virtual</title>
+        <link rel="shortcut icon" href="assets/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+
+    <body>
+        <!-- Loading overlay -->
+        <div class="loading-app">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <h2 class="store-name">Nome da Loja</h2>
+                <p>Horário de funcionamento:</p>
+                <p class="store-time mb-3">Horário de funcionamento</p>
+                <div class="badge text-bg-warning store-delivery">
+                    <i class="fas fa-motorcycle me-1"></i>
+                    Taxa de entrega: <strong>R$ 0,00</strong>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products list -->
+        <main>
+            <section class="category category-base hide">
+                <h4 class="category-name">Nome da Categoria</h4>
+                <div class="scroll-container"></div>
+            </section>
+
+            <a href="" class="item item-base hide">
+                <img src="https://placehold.co/400" loading="lazy">
+                <p class="item-name">Nome do produto</p>
+                <small class="text-secondary item-description">Descrição do produto</small>
+                <p class="item-price fw-bold">R$ 0,00</p>
+            </a>
+        </main>
+
+        <section class="copyright text-secondary">
+            Cardápio Virtual desenvolvido por <a href="https://gabrielsilva.dev.br" target="_blank">Gabriel Silva</a>.
+        </section>
+
+        <!-- Product details modal -->
+        <div class="modal details-modal fade">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Detalhes do Item</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://placehold.co/400" class="w-100 mb-4" loading="lazy">
+                        <p class="product-title fs-5 mb-0 fw-bold">Nome do produto</p>
+                        <p class="text-secondary product-description">Descrição do produto</p>
+
+                        <p class="product-price fw-bold">R$ 0,00</p>
+
+                        <label class="form-label">Alguma observação?</label>
+                        <textarea class="form-control" name="observations" placeholder="Ponto da carne, tirar cebola, sem molho, etc."></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex flex-grow-1 align-items-end gap-4">
+                            <div class="quantity">
+                                <button type="button" class="btn p-0 btn-dark btn-minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" class="form-control" value="1" placeholder="0" name="quantity">
+                                <button type="button" class="btn p-0 btn-dark btn-plus"><i class="fas fa-plus"></i></button>
+                            </div>
+
+                            <button type="button" class="btn btn-danger btn-add m-0">
+                                <i class="fas fa-cart-plus me-1"></i>
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer overlay -->
+        <div class="modal-backdrop footer-overlay"></div>
+
+        <!-- Footer and cart -->
+        <footer class="bg-warning">
+            <button class="btn btn-footer-toggle">
+                <i class="fas fa-chevron-up"></i>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+
+            <div class="container">
+                <p class="empty-message">Seu carrinho está vazio.</p>
+
+                <div class="items-message hide">
+                    <p class="mb-0">
+                        <i class="fas fa-basket-shopping me-1"></i>
+                        Itens no carrinho: <strong>0</strong>
+                    </p>
+                    <button class="btn btn-success btn-success btn-finish">
+                        <i class="fa fa-check me-1"></i>
+                        Finalizar pedido
+                    </button>
+                </div>
+
+                <div class="cart-container"></div>
+
+                <div class="cart-total text-end hide mt-4">
+                    <p class="subtotal mb-0">
+                        <i class="fas fa-usd me-1"></i>
+                        Subtotal: <strong>R$ 0,00</strong>
+                    </p>
+                    <p class="delivery mb-0">
+                        <i class="fas fa-motorcycle me-1"></i>
+                        Taxa de entrega: <strong>R$ 0,00</strong>
+                    </p>
+                </div>
+
+                <div class="cart-item cart-item-base hide">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-3 px-2">
+                            <img src="https://placehold.co/400" loading="lazy">
+                        </div>
+                        <div class="col-7 px-2">
+                            <p class="product-title fw-bold mb-0">Nome do produto</p>
+                            <p class="product-price mb-0">Valor: <span class="text-danger">0,00</span></p>
+                            <p class="product-quantity mb-0">Quantidade: <span class="text-danger">1</span></p>
+                            <p class="product-total mb-0">Total: <span class="text-danger">R$ 0,00</span></p>
+                            <p class="product-observations hide mb-0">Observações: <span class="text-secondary">Observações do item</span></p>
+                        </div>
+                        <div class="col-2 px-2">
+                            <button type="button" class="btn btn-danger btn-remove">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Finish order modal -->
+        <div class="modal finish-modal fade">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Finalizar pedido</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Preencha com seus dados para finalizar o pedido:</p>
+                        <form class="form-finish">
+                            <div class="form-group mb-3">
+                                <label class="form-label">Nome</label>
+                                <input required type="text" class="form-control" name="name" placeholder="Nome completo">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Celular</label>
+                                <input required type="tel" class="form-control" name="cellphone" placeholder="(00) 00000-0000">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Forma de pagamento</label>
+                                <select required class="form-select" name="payment">
+                                    <option>Cartão de crédito / débito</option>
+                                    <option>Pix</option>
+                                    <option>Dinheiro</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Como você gostaria de receber o pedido?</label>
+                                <select required class="form-select" name="type">
+                                    <option>Delivery</option>
+                                    <option>Retirar na loja</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">Informe o endereço para entrega</label>
+                                <textarea rows="4" required class="form-control" name="address" placeholder="Informe rua, número, quadra, lote, bairro e ponto de referência"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100 d-block">
+                                <i class="fab fa-whatsapp me-1"></i>
+                                Finalizar pedido
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.22.4/sweetalert2.all.min.js"></script>
+        <script src="assets/scripts.js"></script>
+    </body>
+
+</html>

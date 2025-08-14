@@ -1,0 +1,92 @@
+{
+    "settings": {
+        "name": "Best Burguer",
+        "image": "https://blog.bendize.com.br/wp-content/uploads/2023/09/image-8.jpeg",
+        "time": "Terça a Domingo - 19h às 23h",
+        "whatsapp": "5511999999999",
+        "delivery_price": 5
+    },
+    "categories": [
+        {
+            "category": "Sanduíches da Casa",
+            "active": true,
+            "products": [
+                {
+                    "name": "Tradicional",
+                    "description": "Clássico da casa, hambúrguer bovino 160g, queijo cheddar, alface, tomate e molho especial.",
+                    "price": 45,
+                    "image": "https://viagem.cnnbrasil.com.br/wp-content/uploads/sites/5/2022/05/mafe-estudio-LV2p9Utbkbw-unsplash.jpg",
+                    "active": true
+                },
+                {
+                    "name": "Duplo Cheddar",
+                    "description": "Dois hambúrgueres de 100g, queijo cheddar e bacon.",
+                    "price": 55,
+                    "image": "https://osaboroso.com.br/wp-content/uploads/2023/08/IMG-20230912-WA0057.jpg",
+                    "active": true
+                },
+                {
+                    "name": "Franguito",
+                    "description": "Hambúrguer de frango empanado de 100g, queijo cheddar, alface e cebola roxa.",
+                    "price": 36,
+                    "image": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/ad2f5bca67422df23f8e6916d6afc6a2.jpg?itok=3A6mvEQY",
+                    "active": true
+                }
+            ]
+        },
+        {
+            "category": "Acompanhamentos",
+            "active": true,
+            "products": [
+                {
+                    "name": "Batata frita tradicional",
+                    "description": "Porção de 400g de batata frita tradicional crocante.",
+                    "price": 20,
+                    "image": "https://gastronomiacarioca.zonasul.com.br/wp-content/uploads/2023/05/batata_frita_destaque_ilustrativo_zona_sul.jpg",
+                    "active": true
+                },
+                {
+                    "name": "Batata frita especial",
+                    "description": "Porção de 400g de batata frita com cheddar e bacon.",
+                    "price": 40,
+                    "image": "https://alloydeliveryimages.s3.sa-east-1.amazonaws.com/item_images/12763/6687f2813cdfa4ebl4.webp",
+                    "active": true
+                },
+                {
+                    "name": "Onion Rings",
+                    "description": "Porção de 300g de cebola empanada, acompanha molho de ketchup especial.",
+                    "price": 30,
+                    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpLW4NpByd55QSY_ZuXdYROCf0m5tBLukYCxWM2DInpkdbc3m0IaVR1UKtRmKd3G47lEiSx-bBbmvyCu6w2hb7veWevQLchFUs0lQZHg-2PquQL4ghLG3MG5mZOkTh1FSxQjFN7u6l0FyPeWPqj8X7YZI1JR9lxjJnpmuTscl2LnicMnQGhxamBJpZ/s2000/onion-rings.jpg",
+                    "active": true
+                }
+            ]
+        },
+        {
+            "category": "Bebidas",
+            "active": true,
+            "products": [
+                {
+                    "name": "Coca-cola lata 350ml",
+                    "description": "Normal ou zero. Informar nas observações a opção desejada.",
+                    "price": 8,
+                    "image": "https://www.drogariaminasbrasil.com.br/media/webp/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/image/227998c1a/refrigerante-coca-cola-lata-350ml_jpg.webp",
+                    "active": true
+                },
+                {
+                    "name": "Guaraná lata 269ml",
+                    "description": "Normal ou zero. Informar nas observações a opção desejada.",
+                    "price": 6,
+                    "image": "https://mercantilatacado.vtexassets.com/arquivos/ids/168666-800-auto?v=638342826763300000&width=800&height=auto&aspect=true",
+                    "active": true
+                },
+                {
+                    "name": "Suco 300ml",
+                    "description": "Sabores: Laranja, morango, maracujá, uva e caju. Informar nas observações o sabor desejado.",
+                    "price": 12,
+                    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdXJ1wuzIxz7FZnRI8uXcGgTHQv3LdiWluQ&s",
+                    "active": true
+                }
+            ]
+        }
+    ]
+}
