@@ -187,6 +187,7 @@ $(function() {
         $detailsModal.modal('hide');
 
         Swal.fire({
+            theme: 'dark',
             toast: true,
             position: 'top',
             showConfirmButton: false,
@@ -205,6 +206,7 @@ $(function() {
         updateCart();
 
         Swal.fire({
+            theme: 'dark',
             toast: true,
             position: 'top',
             showConfirmButton: false,
@@ -252,13 +254,13 @@ $(function() {
 
             $item.find('img').attr('src', product.image);
             $item.find('.product-title').text(product.name);
-            $item.find('.product-quantity span').text(product.quantity);
-            $item.find('.product-price span').text(formatPrice(product.price));
-            $item.find('.product-total span').text(formatPrice(product.total));
+            $item.find('.product-quantity strong').text(product.quantity);
+            $item.find('.product-price strong').text(formatPrice(product.price));
+            $item.find('.product-total strong').text(formatPrice(product.total));
 
             if(product.observations.length) {
                 $item.find('.product-observations').removeClass('hide');
-                $item.find('.product-observations span').text(product.observations);
+                $item.find('.product-observations strong').text(product.observations);
             }
 
             const $btnRemove = $item.find('.btn-remove');
@@ -329,6 +331,7 @@ $(function() {
     $footerContainer.find('.btn-footer-toggle').on('click', () => {
         $footerContainer.toggleClass('expand');
         $footerOverlay.toggleClass('show');
+        $('body').toggleClass('overflow-hidden');
     });
 
     /**
@@ -338,6 +341,7 @@ $(function() {
         if(!$footerContainer.hasClass('expand')) {
             $footerContainer.addClass('expand');
             $footerOverlay.addClass('show');
+            $('body').addClass('overflow-hidden');
         }
 
         $finishModal.modal('show');
@@ -405,6 +409,7 @@ $(function() {
         window.open(url, '_blank');
 
         Swal.fire({
+            theme: 'dark',
             title: 'Pedido realizado!',
             text: 'Você será redirecionado ao WhatsApp para finalizar seu pedido. Envie a mensagem para confirmar.',
             icon: 'success'
@@ -412,6 +417,7 @@ $(function() {
 
         $finishModal.modal('hide');
         $footerContainer.removeClass('expand');
+        $('body').removeClass('overflow-hidden');
         $footerOverlay.removeClass('show');
         sessionStorage.removeItem('saved-order');
     });

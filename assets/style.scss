@@ -21,12 +21,6 @@ body {
     border-radius: 0;
 }
 
-.btn-add {
-    width: 100%;
-    display: block;
-    margin-top: 10px;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -124,8 +118,9 @@ section.copyright {
         color: white;
         font-weight: 700;
         font-size: 15px;
-        border-bottom: 2px solid transparent;
+        border-bottom: 4px solid transparent;
         -webkit-user-drag: none;
+        transition: .3s all;
 
         &.active {
             border-color: #dc3545;
@@ -170,11 +165,11 @@ section.category {
     }
 
     .item {
-        &:first-of-type {
+        &:first-child {
             margin-left: 20px;
         }
 
-        &:last-of-type {
+        &:last-child {
             margin-right: 20px;
         }
 

@@ -1,14 +1,16 @@
-# 📱 Cardápio Virtual
+# Cardápio Virtual
 
-O **Cardápio Virtual** é uma aplicação web responsiva desenvolvida para restaurantes, lanchonetes e outros estabelecimentos que desejam oferecer um menu digital.
+O **Cardápio Virtual** é uma aplicação web responsiva gratuita desenvolvida para restaurantes, lanchonetes e outros estabelecimentos que desejam oferecer um menu digital.
 
 O sistema permite que o cliente navegue pelas categorias e produtos, adicione itens ao carrinho e finalize o pedido diretamente pelo **WhatsApp** da loja.
 
-Pode ser usado tanto na loja física como cardápio virtual, quanto para delivery ou retirada.
+Pode ser usado na loja física como cardápio virtual ou para link de delivery / retirada.
 
 ## 🚀 Demonstração
 
 Você pode testar o sistema neste link: https://eugabrielsilva.github.io/cardapio-virtual
+
+Todos os dados na demonstração são meramente ilustrativos.
 
 ## 💭 Funcionalidades
 

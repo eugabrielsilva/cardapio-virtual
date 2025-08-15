@@ -20,12 +20,6 @@ body {
   border-radius: 0;
 }
 
-.btn-add {
-  width: 100%;
-  display: block;
-  margin-top: 10px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -117,8 +111,9 @@ section.copyright a {
   color: white;
   font-weight: 700;
   font-size: 15px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
   -webkit-user-drag: none;
+  transition: 0.3s all;
 }
 .categories-list .nav-link.active {
   border-color: #dc3545;
@@ -156,10 +151,10 @@ section.category .scroll-container::-webkit-scrollbar {
 section.category .scroll-container .item {
   flex: 0 0 35%;
 }
-section.category .item:first-of-type {
+section.category .item:first-child {
   margin-left: 20px;
 }
-section.category .item:last-of-type {
+section.category .item:last-child {
   margin-right: 20px;
 }
 section.category .item img {
