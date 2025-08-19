@@ -17,7 +17,12 @@ $(function() {
      * Formata um valor de float para R$.
      */
     function formatPrice(price) {
-        return 'R$ ' + price.toFixed(2).replace('.', ',');
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 3
+        }).format(price);
     }
 
     /**
@@ -280,32 +285,30 @@ $(function() {
      * Habilita scroll horizontal no desktop.
      */
     function enableDragScroll() {
-        if(window.matchMedia('(pointer: fine)').matches) {
-            $('.scroll-container, .categories-list').each(function() {
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-                const $this = $(this);
+        $('.scroll-container, .categories-list').each(function() {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            const $this = $(this);
 
-                $this.on('mousedown', function(e) {
-                    isDown = true;
-                    startX = e.pageX - $this.offset().left;
-                    scrollLeft = $this.scrollLeft();
-                });
-
-                $this.on('mouseleave mouseup', function() {
-                    isDown = false;
-                });
-
-                $this.on('mousemove', function(e) {
-                    if(!isDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - $this.offset().left;
-                    const walk = (x - startX) * 1;
-                    $this.scrollLeft(scrollLeft - walk);
-                });
+            $this.on('mousedown', function(e) {
+                isDown = true;
+                startX = e.pageX - $this.offset().left;
+                scrollLeft = $this.scrollLeft();
             });
-        }
+
+            $this.on('mouseleave mouseup', function() {
+                isDown = false;
+            });
+
+            $this.on('mousemove', function(e) {
+                if(!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - $this.offset().left;
+                const walk = (x - startX) * 1;
+                $this.scrollLeft(scrollLeft - walk);
+            });
+        });
     }
 
     /**

@@ -151,6 +151,11 @@ section.category .scroll-container::-webkit-scrollbar {
 section.category .scroll-container .item {
   flex: 0 0 35%;
 }
+@media (min-width: 768px) {
+  section.category .scroll-container .item {
+    flex: 0 0 25%;
+  }
+}
 section.category .item:first-child {
   margin-left: 20px;
 }
@@ -230,7 +235,7 @@ footer .btn-footer-toggle {
   background-color: #ffc107;
   color: black;
 }
-footer .btn-footer-toggle:focus, footer .btn-footer-toggle:hover {
+footer .btn-footer-toggle:focus, footer .btn-footer-toggle:hover, footer .btn-footer-toggle:active {
   background-color: #ffc107;
   color: black;
 }
